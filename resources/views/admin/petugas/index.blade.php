@@ -74,6 +74,7 @@
                     <th class="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">No</th>
                     <th class="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">NIP</th>
                     <th class="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Nama</th>
+                    <th class="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Email</th>
                     <th class="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Instansi</th>
                     <th class="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Jabatan</th>
                     <th class="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Telepon</th>
@@ -85,10 +86,8 @@
                 <tr class="hover:bg-gray-50 transition-colors">
                     <td class="px-6 py-4 text-gray-600">{{ $petugas->firstItem() + $key }}</td>
                     <td class="px-6 py-4 text-gray-800 font-medium">{{ $data->nip }}</td>
-                    <td class="px-6 py-4">
-                        <div class="font-semibold text-gray-800">{{ $data->nama }}</div>
-                        <small class="text-gray-400 text-xs">{{ $data->email }}</small>
-                    </td>
+                    <td class="px-6 py-4 font-semibold text-gray-800">{{ $data->nama }}</td>
+                    <td class="px-6 py-4 text-gray-600 text-sm">{{ $data->email }}</td>
                     <td class="px-6 py-4 text-gray-600 text-sm">{{ $data->instansi->nama ?? '-' }}</td>
                     <td class="px-6 py-4 text-gray-600 text-sm">{{ $data->jabatan }}</td>
                     <td class="px-6 py-4 text-gray-600 text-sm">{{ $data->telp ?? '-' }}</td>
@@ -109,7 +108,7 @@
                 </tr>
                 @empty
                 <tr>
-                    <td colspan="7" class="px-6 py-12 text-center text-gray-400">
+                    <td colspan="8" class="px-6 py-12 text-center text-gray-400">
                         <i class="fas fa-inbox text-5xl mb-4"></i>
                         <p class="text-lg">Belum ada data petugas</p>
                         <a href="{{ route('admin.petugas.create') }}" class="text-blue-600 hover:text-blue-700 mt-2 inline-block font-medium">
